@@ -9,7 +9,49 @@
         <h1> Editar un producto ya existente </h1>
 
         <main>
-            <!-- Elementos necesarios para cargar la información -->
+            <form action="">
+                <label for="in-name">Nombre</label>
+                <input type="text" id="in-nombre" required>
+        
+                <label for="in-description">descripcion</label>
+                <input type="text" id="in-description" required>
+        
+                <label for="in-precio">PRECIO</label>
+                <input type="text" id="in-precio" required maxlength="8" minlength="7">
+        
+                <label for="in-image">Imagen</label>
+                <input type="text" id="in-image" required>
+        
+                <button >Crear</button>
+                <button onclick="(getData)">Leer</button>
+                <button onclick="(update)">Editar</button>
+                <button>Eliminar</button>
+                
+            </form>
+        </body>
+        <script>
+            function getData(){
+                // Recupera los datos del formulario
+                const name = document.getElementById("in-nombre").value;
+                const description = document.getElementById("in-descripcion").value;
+                const price = document.getElementById("in-precio").value;
+                const image = document.getElementById("in-image").value;
+        
+                const data = {
+                    name: name,
+                    description: description,
+                    price: price,
+                    image: image
+                }
+                return data
+            }
+            function update(){
+        const data = getData();
+        fetch(UPDATE, ..., data);
+    }
+        </script>
+        </html>
+                    <!-- Elementos necesarios para cargar la información -->
         </main>
     </body>
     
